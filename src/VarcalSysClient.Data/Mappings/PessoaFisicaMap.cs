@@ -15,6 +15,7 @@ namespace VarcalSysClient.Data.Mappings
             ToTable("tbPessoaFisica");
 
             HasKey(p => p.Id);
+            
 
             Property(p => p.Id)
                 .HasColumnName("Id")
@@ -41,11 +42,7 @@ namespace VarcalSysClient.Data.Mappings
             Property(p => p.Sexo)
                 .HasColumnName("Sexo")
                 .HasColumnType("int")
-                .IsRequired();
-            Property(p => p.ClienteId)
-                .HasColumnName("ClienteId")
-                .HasColumnType("int")
-                .IsRequired();
+                .IsRequired();          
             Property(p => p.Ativo)
                 .HasColumnName("Ativo")
                 .HasColumnType("bit")

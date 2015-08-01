@@ -40,12 +40,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\Base\CollectionBase.cs" />
+    <Compile Include="Collections\ContatoCollection.cs" />
+    <Compile Include="Collections\EnderecoCollection.cs" />
     <Compile Include="Contracts\Repositories\Base\IBaseRepository.cs" />
+    <Compile Include="Contracts\Repositories\ICidadeRepository.cs" />
+    <Compile Include="Contracts\Repositories\IClienteRepository.cs" />
+    <Compile Include="Contracts\Repositories\IContatoRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEmpresaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEnderecoRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEstadoRepository.cs" />
+    <Compile Include="Contracts\Repositories\IMensagemRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPessoaFisicaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPessoaJuridicaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPessoaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPlanoHostRepository.cs" />
+    <Compile Include="Contracts\Repositories\ITicketRepository.cs" />
+    <Compile Include="Contracts\Repositories\ITicketTipoRepository.cs" />
     <Compile Include="Entities\Base\BaseEntity.cs" />
     <Compile Include="Entities\Cidade.cs" />
-    <Compile Include="Entities\Contato.cs" />
-    <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\Contato.cs" />
+    <Compile Include="Entities\Empresa.cs" />
+    <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="Entities\Pessoa.cs" />
     <Compile Include="Entities\Estado.cs" />
     <Compile Include="Entities\Mensagem.cs" />
     <Compile Include="Entities\PessoaFisica.cs" />

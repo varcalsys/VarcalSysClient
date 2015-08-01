@@ -18,6 +18,9 @@ namespace VarcalSysClient.Data.Mappings
             HasRequired(p => p.Cliente)
                 .WithMany()
                 .HasForeignKey(p => p.ClienteId);
+            HasOptional(p => p.Empresa)
+                .WithMany()
+                .HasForeignKey(p => p.EmpresaId);
             
             Property(p=>p.Id)
                 .HasColumnName("Id")
@@ -26,14 +29,14 @@ namespace VarcalSysClient.Data.Mappings
                 .HasColumnName("DataCadastro")
                 .HasColumnType("datetime")
                 .IsRequired();
+            Property(p => p.DataResposta)
+                .HasColumnName("DataResposta")
+                .HasColumnType("datetime")
+                .IsOptional();
             Property(p => p.EmAberto)
                 .HasColumnName("EmAberto")
                 .HasColumnType("bit")
-                .IsRequired();
-            Property(p => p.Respondido)
-                .HasColumnName("Respondido")
-                .HasColumnType("bit")
-                .IsRequired();
+                .IsRequired();         
             Property(p => p.Ativo)
                 .HasColumnName("Ativo")
                 .HasColumnType("bit")

@@ -15,9 +15,7 @@ namespace VarcalSysClient.Data.Mappings
             ToTable("tbPessoaJuridica");
 
             HasKey(p => p.Id);
-            HasRequired(p => p.Cliente)
-                .WithMany()
-                .HasForeignKey(p => p.ClienteId);
+           
 
             Property(p => p.Id)
                 .HasColumnName("Id")
@@ -31,11 +29,7 @@ namespace VarcalSysClient.Data.Mappings
                 .HasColumnName("CNPJ")
                 .HasColumnType("char")
                 .HasMaxLength(14)
-                .IsRequired();
-            Property(p => p.ClienteId)
-                .HasColumnName("ClienteId")
-                .HasColumnType("int")
-                .IsRequired();
+                .IsRequired();          
             Property(p => p.Ativo)
                 .HasColumnName("Ativo")
                 .HasColumnType("bit")

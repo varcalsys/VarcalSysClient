@@ -16,9 +16,9 @@ namespace VarcalSysClient.Data.Mappings
 
             HasKey(p => p.Id);
 
-            HasRequired(p => p.Cliente)
+            HasRequired(p => p.Pessoa)
                 .WithMany(c=>c.Contatos)
-                .HasForeignKey(p => p.ClienteId);
+                .HasForeignKey(p => p.PessoaId);
 
             
 
@@ -50,8 +50,8 @@ namespace VarcalSysClient.Data.Mappings
                 .HasColumnType("varchar")
                 .HasMaxLength(50)
                 .IsOptional();
-            Property(p => p.ClienteId)
-               .HasColumnName("ClienteId")
+            Property(p => p.PessoaId)
+               .HasColumnName("PessoaId")
                .HasColumnType("int")
                .IsRequired();
             Property(p => p.Ativo)

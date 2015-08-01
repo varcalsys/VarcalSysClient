@@ -1,4 +1,9 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity.ModelConfiguration;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using VarcalSysClient.Domain.Entities;
 
 namespace VarcalSysClient.Data.Mappings
@@ -10,30 +15,24 @@ namespace VarcalSysClient.Data.Mappings
             ToTable("tbCliente");
 
             HasKey(p => p.Id);
-            HasRequired(p => p.PlanoHost)
+            HasRequired(p => p.Pessoa)
                 .WithMany()
-                .HasForeignKey(k => k.PlanoHostId);
+                .HasForeignKey(p => p.PessoaId);
+            HasRequired(p => p.PlanosHost)
+                .WithMany()
+                .HasForeignKey(p => p.PlanosHostId);
 
             Property(p => p.Id)
                 .HasColumnName("Id")
                 .HasColumnType("int");
-            Property(p => p.PessoaTipo)
-                .HasColumnName("PessoaTipo")
+            Property(p => p.PessoaId)
+                .HasColumnName("PessoaId")
                 .HasColumnType("int")
                 .IsRequired();
-            Property(p => p.DataCadastro)
-                .HasColumnName("DataCadastro")
-                .HasColumnType("datetime")
-                .IsRequired();
-            Property(p => p.PlanoHostId)
+            Property(p => p.PlanosHostId)
                 .HasColumnName("PlanoHostId")
                 .HasColumnType("int")
                 .IsRequired();
-            Property(p => p.Ativo)
-                .HasColumnName("Ativo")
-                .HasColumnType("bit")
-                .IsRequired();
-
-       }
+        }
     }
 }

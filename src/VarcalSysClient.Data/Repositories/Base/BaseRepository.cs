@@ -8,7 +8,13 @@ namespace VarcalSysClient.Data.Repositories.Base
 {
     public class BaseRepository<T>: IBaseRepository<T> where T: class
     {
-        protected EfContext DbContext = new EfContext();
+        protected EfContext DbContext;
+
+        public BaseRepository(EfContext dbContext)
+        {
+            DbContext = dbContext;
+        }
+
 
         public void Add(T entity)
         {

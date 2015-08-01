@@ -10,9 +10,9 @@ namespace VarcalSysClient.Data.Mappings
             ToTable("tbEndereco");
             HasKey(p => p.Id);
 
-            HasRequired(p => p.Cliente)
+            HasRequired(p => p.Pessoa)
                 .WithMany(e => e.Enderecos)
-                .HasForeignKey(p => p.ClienteId);
+                .HasForeignKey(p => p.PessoaId);
 
             HasRequired(p => p.Cidade)
                 .WithMany()
@@ -43,7 +43,10 @@ namespace VarcalSysClient.Data.Mappings
                 .HasColumnName("Bairro")
                 .HasColumnType("varchar")
                 .HasMaxLength(100);
-           
+            Property(p => p.PessoaId)
+               .HasColumnName("PessoaId")
+               .HasColumnType("int")
+               .IsRequired();
             Property(p => p.CidadeId)
                 .HasColumnName("Cidade")
                 .HasColumnType("int")

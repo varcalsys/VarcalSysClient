@@ -18,9 +18,9 @@ namespace VarcalSysClient.Domain.Entities
 
         public Cidade Cidade { get; set; }
         public int CidadeId { get; set; }
-        
-        public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; }
+
+        public int PessoaId { get; set; }
+        public Pessoa Pessoa { get; set; }
 
     }
 }

@@ -1,23 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
-using VarcalSysClient.Domain.Entities.Base;
-using VarcalSysClient.Domain.Enums;
 
 namespace VarcalSysClient.Domain.Entities
 {
-    public sealed class Cliente: BaseEntity
+    public class Cliente
     {
-        public PessoaTipo PessoaTipo {get; set;}
-        public List<Endereco> Enderecos { get; set; }
-        public List<Contato> Contatos { get; set; }
-        public DateTime DataCadastro { get; set; }
-        public int PlanoHostId { get; set; }
-        public PlanosHost PlanoHost { get; set; }
-
+        public int Id { get; set; }
+        public PlanosHost PlanosHost { get; set; }
+        public int PlanosHostId { get; set; }
+        public Pessoa Pessoa { get; set; }
+        public int PessoaId { get; set; }
     }
-
-    
 }

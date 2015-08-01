@@ -7,12 +7,12 @@ using VarcalSysClient.Domain.Entities.Base;
 
 namespace VarcalSysClient.Domain.Entities
 {
-    public sealed class PessoaJuridica: BaseEntity
+    public  class PessoaJuridica: BaseEntity
     {
         public string RazaoSocial { get; set; }
         public string Cnpj { get; set; }
-        public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; }
+            
+        public virtual Pessoa Pessoa { get; set; }
 
     }
 }

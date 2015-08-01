@@ -14,8 +14,7 @@ namespace VarcalSysClient.Domain.Entities
         public string Telefone { get; set; }
         public string Celular { get; set; }
         public string Skype { get; set; }
-
-        public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; }
+        public int PessoaId { get; set; }
+        public Pessoa Pessoa { get; set; }
     }
 }

@@ -3,16 +3,15 @@ using VarcalSysClient.Domain.Entities.Base;
 
 namespace VarcalSysClient.Domain.Entities
 {
-    public sealed class PessoaFisica: BaseEntity
+    public  class PessoaFisica: BaseEntity
     {
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Rg { get; set; }
         public DateTime DataNascimento { get; set; }
         public Sexo Sexo { get; set; }
-
-        public int ClienteId { get; set; }
-        public Cliente Cliente { get; set; }
+     
+        public virtual Pessoa Pessoa { get; set; }
     }
 
 

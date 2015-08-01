@@ -11,13 +11,13 @@ namespace VarcalSysClient.Domain.Entities
     {       
        
         public DateTime DataCadastro { get; set; }
+        public DateTime DataResposta { get; set; }
         public List<Mensagem> Mensagens { get; set; }
-        public bool Respondido { get; set; }
         public bool EmAberto { get; set; }
-
         public int TicketTipoId { get; set; }
         public virtual TicketTipo TicketTipo { get; set; }
-
+        public Empresa Empresa { get; set; }
+        public int? EmpresaId { get; set; }
         public Cliente Cliente { get; set; }
         public int ClienteId { get; set; }
 
