@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using VarcalSysClient.Data.AppDbContext;
-using VarcalSysClient.Domain.Contracts.Repositories.Base;
+using VarcalSysClient.Domain.Contracts.Repositories.Core;
 
-namespace VarcalSysClient.Data.Repositories.Base
+namespace VarcalSysClient.Data.Repositories.Core
 {
     public class BaseRepository<T>: IBaseRepository<T> where T: class
     {

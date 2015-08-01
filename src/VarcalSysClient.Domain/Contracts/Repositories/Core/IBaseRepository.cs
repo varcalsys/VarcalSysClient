@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace VarcalSysClient.Domain.Contracts.Repositories.Base
+namespace VarcalSysClient.Domain.Contracts.Repositories.Core
 {
     public interface IBaseRepository<T> where T : class
     {
@@ -12,6 +8,7 @@ namespace VarcalSysClient.Domain.Contracts.Repositories.Base
         void Update(T entity);
         T GetById(int id);
         IEnumerable<T> GetAll();
+        IEnumerable<T> GetAllAsNoTracking();
         void Commit();
     }
 }

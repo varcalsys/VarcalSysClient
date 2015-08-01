@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VarcalSysClient.Domain.Collections;
-using VarcalSysClient.Domain.Entities.Base;
+using VarcalSysClient.Domain.Entities.Core;
 using VarcalSysClient.Domain.Enums;
 
 namespace VarcalSysClient.Domain.Entities

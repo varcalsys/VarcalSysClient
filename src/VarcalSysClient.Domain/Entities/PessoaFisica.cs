@@ -1,5 +1,5 @@
 ﻿using System;
-using VarcalSysClient.Domain.Entities.Base;
+using VarcalSysClient.Domain.Entities.Core;
 
 namespace VarcalSysClient.Domain.Entities
 {
