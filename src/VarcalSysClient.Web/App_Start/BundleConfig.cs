@@ -10,23 +10,23 @@ namespace VarcalSysClient.Web
         {
             
             //Arquivos JS
-            bundles.Add(new ScriptBundle("bundle/jquery").Include(
+            bundles.Add(new ScriptBundle("~/bundle/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("bundle/jquery-validate").Include(
+            bundles.Add(new ScriptBundle("~/bundle/jqueryval").Include(
                        "~/Scripts/jquery.validate*"));
 
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("bundle/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundle/bootstrap").Include(
                         "~/Scripts/bootstrap.js",
                         "~/Scripts/respond.js"));
 
 
             //Arquivos CSS
-            bundles.Add(new StyleBundle("bundle/css").Include(
+            bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/bootstrap.css",
                         "~/Content/bootstrap-theme.css",
                         "~/Content/css/Site.css"));

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using VarcalSysClient.IoC;
+using VarcalSysClient.IoC.SimpleInjector;
 
 namespace VarcalSysClient.Web
 {
@@ -17,8 +18,10 @@ namespace VarcalSysClient.Web
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundle(BundleTable.Bundles);
 
-            IocStartup.Init();
-            DependencyResolver.SetResolver(new IoCDependencyResolver());
+            //IocStartup.Init();
+            //DependencyResolver.SetResolver(new IoCDependencyResolver());
+
+            DependencyResolver.SetResolver(IoCSimpleInjector.SimpleInjectorInit());
         }
     }
 }

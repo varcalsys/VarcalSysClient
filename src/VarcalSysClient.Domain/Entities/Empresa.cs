@@ -11,5 +11,7 @@ namespace VarcalSysClient.Domain.Entities
     {
         public int PessoaId { get; set; }
         public Pessoa Pessoa { get; set; }
+        public string PessoaResponsavel { get; set; }
+        public string EmailResponsavel { get; set; }
     }
 }
