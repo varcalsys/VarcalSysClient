@@ -35,10 +35,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\Base\BaseCollection.cs" />
+    <Compile Include="Collections\BoletoCollection.cs" />
+    <Compile Include="Collections\CidadeCollection.cs" />
+    <Compile Include="Collections\ClienteCollection.cs" />
     <Compile Include="Collections\ContatoCollection.cs" />
     <Compile Include="Collections\EnderecoCollection.cs" />
+    <Compile Include="Collections\EstadoCollection.cs" />
+    <Compile Include="Collections\PlanoHostCollection.cs" />
     <Compile Include="Collections\RespostaCollection.cs" />
+    <Compile Include="Collections\TicketCollection.cs" />
     <Compile Include="Contracts\Repositories\Core\IRepositoryBase.cs" />
+    <Compile Include="Contracts\Repositories\IBoletoRepository.cs" />
     <Compile Include="Contracts\Repositories\ICidadeRepository.cs" />
     <Compile Include="Contracts\Repositories\IClienteRepository.cs" />
     <Compile Include="Contracts\Repositories\IContatoRepository.cs" />
@@ -68,6 +75,7 @@
     <Compile Include="Contracts\Services\IPessoaJuridicaDomainService.cs" />
     <Compile Include="Contracts\Services\IPlanoHostDomainService.cs" />
     <Compile Include="Contracts\Services\ITicketTipoDomainService.cs" />
+    <Compile Include="Entities\Boleto.cs" />
     <Compile Include="Entities\Core\BaseEntity.cs" />
     <Compile Include="Entities\Cidade.cs" />
     <Compile Include="Entities\Cliente.cs" />
@@ -79,7 +87,7 @@
     <Compile Include="Entities\Mensagem.cs" />
     <Compile Include="Entities\PessoaFisica.cs" />
     <Compile Include="Entities\PessoaJuridica.cs" />
-    <Compile Include="Entities\PlanosHost.cs" />
+    <Compile Include="Entities\PlanoHost.cs" />
     <Compile Include="Entities\Resposta.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="Entities\TicketTipo.cs" />

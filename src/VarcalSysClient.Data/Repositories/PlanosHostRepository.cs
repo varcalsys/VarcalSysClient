@@ -5,7 +5,7 @@ using VarcalSysClient.Domain.Entities;
 
 namespace VarcalSysClient.Data.Repositories
 {
-    public class PlanosHostRepository: RepositoryBase<PlanosHost>, IPlanoHostRepository
+    public class PlanosHostRepository: RepositoryBase<PlanoHost>, IPlanoHostRepository
     {
         public PlanosHostRepository(EfContext dbContext) : base(dbContext)
         {

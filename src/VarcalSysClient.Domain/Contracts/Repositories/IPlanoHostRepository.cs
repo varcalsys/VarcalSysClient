@@ -3,7 +3,7 @@ using VarcalSysClient.Domain.Entities;
 
 namespace VarcalSysClient.Domain.Contracts.Repositories
 {
-    public interface IPlanoHostRepository: IRepositoryBase<PlanosHost>
+    public interface IPlanoHostRepository: IRepositoryBase<PlanoHost>
     {
     }
 }

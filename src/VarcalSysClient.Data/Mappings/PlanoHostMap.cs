@@ -3,8 +3,7 @@ using VarcalSysClient.Domain.Entities;
 
 namespace VarcalSysClient.Data.Mappings
 {
-    public class PlanoHostMap:EntityTypeConfiguration<PlanosHost>
-    {
+    public class PlanoHostMap:EntityTypeConfiguration<PlanoHost> {
         public PlanoHostMap()
         {
             ToTable("tbPlanosHost");

@@ -2,7 +2,7 @@
 
 namespace VarcalSysClient.Domain.Entities
 {
-    public sealed class PlanosHost: BaseEntity
+    public sealed class PlanoHost: BaseEntity
     {
         public string Descricao { get; set; }
         public decimal Valor { get; set; }
