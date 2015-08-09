@@ -28,6 +28,9 @@ namespace VarcalSysClient.Data.AppDbContext
         public DbSet<PlanosHost> PlanosHosts { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TicketTipo> TickestTipo { get; set; }
+        public DbSet<Hospedagem> Hospedagens { get; set; }
+        public DbSet<Resposta> Respostas { get; set; }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -50,7 +53,8 @@ namespace VarcalSysClient.Data.AppDbContext
             modelBuilder.Configurations.Add(new PlanoHostMap());
             modelBuilder.Configurations.Add(new TicketMap());
             modelBuilder.Configurations.Add(new TicketTipoMap());
-            modelBuilder.Configurations.Add(new EmpresaMap());
+            modelBuilder.Configurations.Add(new HospedagemMap());
+            modelBuilder.Configurations.Add(new RepostaMap());
         }
 
         public override int SaveChanges()

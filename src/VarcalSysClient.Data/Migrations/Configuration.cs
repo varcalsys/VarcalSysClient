@@ -1,18 +1,16 @@
+using System.Data.Entity.Migrations;
+using VarcalSysClient.Data.AppDbContext;
+
 namespace VarcalSysClient.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<AppDbContext.EfContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EfContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(AppDbContext.EfContext context)
+        protected override void Seed(EfContext context)
         {
             //  This method will be called after migrating to the latest version.
 

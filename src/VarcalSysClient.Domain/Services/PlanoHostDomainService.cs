@@ -5,7 +5,7 @@ using VarcalSysClient.Domain.Services.Core;
 
 namespace VarcalSysClient.Domain.Services
 {
-    public class PlanoHostDomainService: BaseDomainService<PlanosHost>, IPlanoHostDomainService
+    public class PlanoHostDomainService: DomainServiceBase<PlanosHost>, IPlanoHostDomainService
     {
         private readonly IPlanoHostRepository _planoHostRepository;
 

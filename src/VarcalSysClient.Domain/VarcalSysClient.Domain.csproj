@@ -32,21 +32,17 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collections\Base\CollectionBase.cs" />
+    <Compile Include="Collections\Base\BaseCollection.cs" />
     <Compile Include="Collections\ContatoCollection.cs" />
     <Compile Include="Collections\EnderecoCollection.cs" />
-    <Compile Include="Contracts\Repositories\Core\IBaseRepository.cs" />
+    <Compile Include="Collections\RespostaCollection.cs" />
+    <Compile Include="Contracts\Repositories\Core\IRepositoryBase.cs" />
     <Compile Include="Contracts\Repositories\ICidadeRepository.cs" />
     <Compile Include="Contracts\Repositories\IClienteRepository.cs" />
     <Compile Include="Contracts\Repositories\IContatoRepository.cs" />
-    <Compile Include="Contracts\Repositories\IEmpresaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IHospedagemRepository.cs" />
     <Compile Include="Contracts\Repositories\IEnderecoRepository.cs" />
     <Compile Include="Contracts\Repositories\IEstadoRepository.cs" />
     <Compile Include="Contracts\Repositories\IMensagemRepository.cs" />
@@ -54,16 +50,18 @@
     <Compile Include="Contracts\Repositories\IPessoaJuridicaRepository.cs" />
     <Compile Include="Contracts\Repositories\IPessoaRepository.cs" />
     <Compile Include="Contracts\Repositories\IPlanoHostRepository.cs" />
+    <Compile Include="Contracts\Repositories\IRespostaRepository.cs" />
     <Compile Include="Contracts\Repositories\ITicketRepository.cs" />
     <Compile Include="Contracts\Repositories\ITicketTipoRepository.cs" />
-    <Compile Include="Contracts\Services\Core\IBaseDomainService.cs" />
+    <Compile Include="Contracts\Services\Core\IDomainServiceBase.cs" />
     <Compile Include="Contracts\Services\ICidadeDomainService.cs" />
     <Compile Include="Contracts\Services\IClienteDomainService.cs" />
     <Compile Include="Contracts\Services\IContatoDomainService.cs" />
-    <Compile Include="Contracts\Services\IEmpresaDomainService.cs" />
+    <Compile Include="Contracts\Services\IHospdagemDomainService.cs" />
     <Compile Include="Contracts\Services\IEnderecoDomainService.cs" />
     <Compile Include="Contracts\Services\IEstadoDomainService.cs" />
     <Compile Include="Contracts\Services\IMensagemDomainService.cs" />
+    <Compile Include="Contracts\Services\IRepostaDomainService.cs" />
     <Compile Include="Contracts\Services\ITicketDomainService.cs" />
     <Compile Include="Contracts\Services\IPessoaDomainService.cs" />
     <Compile Include="Contracts\Services\IPessoaFisicaDomainService.cs" />
@@ -74,14 +72,15 @@
     <Compile Include="Entities\Cidade.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Contato.cs" />
-    <Compile Include="Entities\Empresa.cs" />
     <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="Entities\Hospedagem.cs" />
     <Compile Include="Entities\Pessoa.cs" />
     <Compile Include="Entities\Estado.cs" />
     <Compile Include="Entities\Mensagem.cs" />
     <Compile Include="Entities\PessoaFisica.cs" />
     <Compile Include="Entities\PessoaJuridica.cs" />
     <Compile Include="Entities\PlanosHost.cs" />
+    <Compile Include="Entities\Resposta.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="Entities\TicketTipo.cs" />
     <Compile Include="Enums\PessoaTipo.cs" />
@@ -90,14 +89,15 @@
     <Compile Include="Services\CidadeDomainService.cs" />
     <Compile Include="Services\ClienteDomainService.cs" />
     <Compile Include="Services\ContatoDomainService.cs" />
-    <Compile Include="Services\Core\BaseDomainService.cs" />
-    <Compile Include="Services\EmpresaDomainService.cs" />
+    <Compile Include="Services\Core\DomainServiceBase.cs" />
+    <Compile Include="Services\HospedagemDomainService.cs" />
     <Compile Include="Services\EnderecoDomainService.cs" />
     <Compile Include="Services\EstadoDomainService.cs" />
     <Compile Include="Services\MensagemDomainService.cs" />
     <Compile Include="Services\PessoaDomainService.cs" />
     <Compile Include="Services\PessoaFisicaDomainService.cs" />
     <Compile Include="Services\PessoaJuridicaDomainService.cs" />
+    <Compile Include="Services\RespostaDomainService.cs" />
     <Compile Include="Services\TicketDomainService.cs" />
     <Compile Include="Services\TicketTipoDomainService.cs" />
   </ItemGroup>

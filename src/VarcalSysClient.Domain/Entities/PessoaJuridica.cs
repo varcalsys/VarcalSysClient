@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VarcalSysClient.Domain.Entities.Core;
+﻿using VarcalSysClient.Domain.Entities.Core;
 
 namespace VarcalSysClient.Domain.Entities
 {
@@ -11,7 +6,8 @@ namespace VarcalSysClient.Domain.Entities
     {
         public string RazaoSocial { get; set; }
         public string Cnpj { get; set; }
-            
+        public string PessoaResponsavel { get; set; }
+        public string EmailResponsavel { get; set; }
         public virtual Pessoa Pessoa { get; set; }
 
     }

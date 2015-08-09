@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VarcalSysClient.Domain.Entities.Core;
+﻿using VarcalSysClient.Domain.Entities.Core;
 
 namespace VarcalSysClient.Domain.Entities
 {
-    public sealed class Contato: BaseEntity
+    public class Contato: BaseEntity
     {
         public string Email { get; set; }
         public string EmailCobranca { get; set; }
@@ -15,6 +10,6 @@ namespace VarcalSysClient.Domain.Entities
         public string Celular { get; set; }
         public string Skype { get; set; }
         public int PessoaId { get; set; }
-        public Pessoa Pessoa { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
     }
 }

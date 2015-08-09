@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
-using VarcalSysClient.Domain.Entities.Core;
+﻿using VarcalSysClient.Domain.Entities.Core;
 
 namespace VarcalSysClient.Domain.Entities
 {
-    public sealed class Endereco: BaseEntity
+    public class Endereco: BaseEntity
     {
         public string Logradouro { get; set; }
         public int Numero { get; set; }
@@ -16,11 +10,11 @@ namespace VarcalSysClient.Domain.Entities
         public string Cep { get; set; }
         public string Bairro { get; set; }
 
-        public Cidade Cidade { get; set; }
+        public virtual Cidade Cidade { get; set; }
         public int CidadeId { get; set; }
 
         public int PessoaId { get; set; }
-        public Pessoa Pessoa { get; set; }
+        public virtual Pessoa Pessoa { get; set; }
 
     }
 }

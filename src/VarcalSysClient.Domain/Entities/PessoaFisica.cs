@@ -3,7 +3,7 @@ using VarcalSysClient.Domain.Entities.Core;
 
 namespace VarcalSysClient.Domain.Entities
 {
-    public  class PessoaFisica: BaseEntity
+    public class PessoaFisica: BaseEntity
     {
         public string Nome { get; set; }
         public string Cpf { get; set; }

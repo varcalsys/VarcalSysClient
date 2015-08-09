@@ -10,10 +10,7 @@ namespace VarcalSysClient.Data.Mappings
             ToTable("tbMensagem");
 
             HasKey(p => p.Id);
-            HasRequired(p => p.Ticket)
-                .WithMany(m => m.Mensagens)
-                .HasForeignKey(p => p.TicketId);
-
+            
             Property(p => p.Id)
                 .HasColumnName("Id")
                 .HasColumnType("int");
@@ -25,10 +22,7 @@ namespace VarcalSysClient.Data.Mappings
                 .HasColumnName("DataCadastro")
                 .HasColumnType("datetime")
                 .IsRequired();
-            Property(p => p.TicketId)
-                .HasColumnName("TicketId")
-                .HasColumnType("int")
-                .IsRequired();
+           
         }
     }
 }

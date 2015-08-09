@@ -1,41 +1,168 @@
-﻿@using System.Web.Optimization
+﻿@{
+    Layout = null;
+}
+
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]>
+<!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Mobile Specific Metas
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="/Content/css/base.css" />
+    <link rel="stylesheet" href="/Content/css/skeleton.css" />
+    <link rel="stylesheet" href="/Content/css/layout.css" />
+    <link rel="stylesheet" href="/Content/css/font-awesome.css" />
+    <link rel="stylesheet" href="/Content/css/owl.carousel.css" />
+    <link rel="stylesheet" href="/Content/css/settings.css" />
+    <link rel="stylesheet" href="/Content/css/retina.css" />
+
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="/images/icon/favicon.gif">
+    @*<link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icon/apple-touch-icon-114x114.png">*@
+
+    <script type="text/javascript" src="/Scripts/js/modernizr.custom.js"></script>
+    <script type="text/javascript">
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-56951139-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+    </script>
+
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                </ul>
-            </div>
-        </div>
-    </div>
+<body class="royal_loader">
+    <!-- Primary Page Layout
+    ================================================== -->
+    <!-- MENU
+    ================================================== -->
+    @Html.Partial("_MenuPrincipal")
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+   
+    
+    @RenderBody()
+   
+    <!-- CONTACT SECTION
+        ================================================== -->
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Html.Partial("_Contato")
+
+    <!-- JAVASCRIPT
+    ================================================== -->
+    <script type="text/javascript" src="/Scripts/js/jquery.js"></script>
+    <script type="text/javascript" src="/Scripts/js/royal_preloader.min.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            "use strict";
+            Royal_Preloader.config({
+                mode: 'logo', // 'number', "text" or "logo"
+                timeout: 0,
+                logo: '/images/preload-logohost.png',
+                opacity: 1,
+                background: ['#212121']
+            });
+        })(jQuery);
+    </script>
+    <script type="text/javascript" src="/Scripts/js/jquery.easing.js"></script>
+    <script type="text/javascript" src="/Scripts/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="/Scripts/js/jquery.themepunch.revolution.min.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            "use strict";
+            var revapi;
+
+            jQuery(document).ready(function () {
+
+                revapi = jQuery('.tp-banner').revolution(
+                 {
+                     delay: 7000,
+                     startwidth: 1100,
+                     startheight: 500,
+                     hideThumbs: 0,
+                     hideTimerBar: "on",
+                     onHoverStop: "off",
+                     navigationType: "none",
+                     navigationArrows: "solo",
+                     navigationStyle: "preview4",
+                     fullWidth: "off",
+                     fullScreen: "on"
+                 });
+
+            });	//ready
+        })(jQuery);
+
+    </script>
+    <script type="text/javascript" src="/Scripts/js/scroll.js"></script>
+    <script type="text/javascript" src="/Scripts/js/navigation.js"></script>
+    <script type="text/javascript" src="/Scripts/js/classie.js"></script>
+    <script type="text/javascript" src="/Scripts/js/cbpAnimatedHeader.min.js"></script>
+    <script type="text/javascript" src="/Scripts/js/jquery.malihu.PageScroll2id.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            "use strict";
+            $(window).load(function () {
+
+                /* Page Scroll to id fn call */
+                $("ul.slimmenu li a,a[href='#top'],a[data-gal='m_PageScroll2id']").mPageScroll2id({
+                    highlightSelector: "ul.slimmenu li a",
+                    offset: 65,
+                    scrollSpeed: 1000,
+                    scrollEasing: "easeInOutCubic"
+                });
+
+                /* demo functions */
+                $("a[rel='next']").click(function (e) {
+                    e.preventDefault();
+                    var to = $(this).parent().parent("section").next().attr("id");
+                    $.mPageScroll2id("scrollTo", to);
+                });
+
+            });
+        })(jQuery);
+
+    </script>
+    <script type="text/javascript" src="/Scripts/js/jquery.counterup.min.js"></script>
+    <script type="text/javascript" src="/Scripts/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="/Scripts/js/jquery.parallax-1.1.3.js"></script>
+    <script type="text/javascript" src="/Scripts/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/Scripts/js/jquery.stapel.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="/Scripts/js/gmaps.js"></script>
+    <script type="text/javascript" src="/Scripts/js/contact.js"></script>
+    <script type="text/javascript" src="/Scripts/js/scrollReveal.js"></script>
+    <script type="text/javascript">
+        (function ($) {
+            "use strict";
+            window.scrollReveal = new scrollReveal();
+        })(jQuery);
+    </script>
+    <script type="text/javascript" src="/Scripts/js/template.js"></script>
+    <!-- End Document
+        ================================================== -->
     @RenderSection("scripts", required: false)
 </body>
 </html>

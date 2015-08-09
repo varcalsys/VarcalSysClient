@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VarcalSysClient.Domain.Entities.Core;
 
 namespace VarcalSysClient.Domain.Entities
@@ -11,7 +7,6 @@ namespace VarcalSysClient.Domain.Entities
     {
         public string Texto { get; set; }
         public DateTime DataCadastro { get; set; }
-        public int TicketId { get; set; }
-        public Ticket Ticket { get; set; }
+       
     }
 }

@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using VarcalSysClient.Domain.Contracts.Services;
 using VarcalSysClient.Domain.Entities;
+using VarcalSysClient.Web.Models;
 
 namespace VarcalSysClient.Web.Controllers
 {
@@ -37,7 +36,7 @@ namespace VarcalSysClient.Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(TicketTipo model)
+        public ActionResult Create(TicketTipoViewModel model)
         {
             
             try
@@ -48,7 +47,12 @@ namespace VarcalSysClient.Web.Controllers
                     return View(model);
                 }
 
-                _ticketTipoDomainService.Add(model);
+                var ticketTipo = new TicketTipo
+                {
+                    Descricao = model.Descricao
+                };
+
+                _ticketTipoDomainService.Add(ticketTipo);
                 _ticketTipoDomainService.Commit();
 
                 return RedirectToAction("Index");

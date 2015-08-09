@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SimpleInjector;
+﻿using SimpleInjector;
 using SimpleInjector.Extensions;
 using VarcalSysClient.Data.AppDbContext;
 using VarcalSysClient.Data.Repositories;
@@ -24,11 +19,11 @@ namespace VarcalSysClient.IoC.SimpleInjector
 
             //Repositories
             container.Register<EfContext, EfContext>();
-            container.RegisterOpenGeneric(typeof(IBaseRepository<>),typeof(BaseRepository<>));
+            container.RegisterOpenGeneric(typeof(IRepositoryBase<>),typeof(RepositoryBase<>));
             container.Register<ICidadeRepository,CidadeRepository>();
             container.Register<IClienteRepository,ClienteRepository>();
             container.Register<IContatoRepository,ContatoRepository>();
-            container.Register<IEmpresaRepository,EmpresaRepository>();
+            container.Register<IHospedagemRepository,HospedagemRepository>();
             container.Register<IEnderecoRepository,EnderecoRepository>();
             container.Register<IEstadoRepository,EstadoRepository>();
             container.Register<IMensagemRepository,MensagemRepository>();
@@ -40,11 +35,11 @@ namespace VarcalSysClient.IoC.SimpleInjector
             container.Register<ITicketTipoRepository,TicketTipoRepository>();
 
             //Services
-            container.RegisterOpenGeneric(typeof(IBaseDomainService<>), typeof(BaseDomainService<>));
+            container.RegisterOpenGeneric(typeof(IDomainServiceBase<>), typeof(DomainServiceBase<>));
             container.Register<ICidadeDomainService, CidadeDomainService>();
             container.Register<IClienteDomainService, ClienteDomainService>();
             container.Register<IContatoDomainService, ContatoDomainService>();
-            container.Register<IEmpresaDomainService, EmpresaDomainService>();
+            container.Register<IHospdagemDomainService, HospedagemDomainService>();
             container.Register<IEnderecoDomainService, EnderecoDomainService>();
             container.Register<IEstadoDomainService, EstadoDomainService>();
             container.Register<IMensagemDomainService, MensagemDomainService>();

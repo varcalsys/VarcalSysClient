@@ -1,10 +1,4 @@
-﻿using System;
-using System.CodeDom;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Ninject.Modules;
+﻿using Ninject.Modules;
 using VarcalSysClient.Data.AppDbContext;
 using VarcalSysClient.Data.Repositories;
 using VarcalSysClient.Data.Repositories.Core;
@@ -12,8 +6,6 @@ using VarcalSysClient.Domain.Contracts.Repositories;
 using VarcalSysClient.Domain.Contracts.Repositories.Core;
 using VarcalSysClient.Domain.Contracts.Services;
 using VarcalSysClient.Domain.Contracts.Services.Core;
-using VarcalSysClient.Domain.Entities;
-using VarcalSysClient.Domain.Enums;
 using VarcalSysClient.Domain.Services;
 
 namespace VarcalSysClient.IoC
@@ -24,11 +16,11 @@ namespace VarcalSysClient.IoC
         {
             //Repositories
             Bind<EfContext>().To<EfContext>();
-            Bind(typeof (IBaseRepository<>)).To(typeof (BaseRepository<>));
+            Bind(typeof (IRepositoryBase<>)).To(typeof (RepositoryBase<>));
             Bind<ICidadeRepository>().To<CidadeRepository>();
             Bind<IClienteRepository>().To<ClienteRepository>();
             Bind<IContatoRepository>().To<ContatoRepository>();
-            Bind<IEmpresaRepository>().To<EmpresaRepository>();
+            Bind<IHospedagemRepository>().To<HospedagemRepository>();
             Bind<IEnderecoRepository>().To<EnderecoRepository>();
             Bind<IEstadoRepository>().To<EstadoRepository>();
             Bind<IMensagemRepository>().To<MensagemRepository>();
@@ -41,11 +33,11 @@ namespace VarcalSysClient.IoC
 
             //Services
             //Repositories
-            Bind(typeof(IBaseDomainService<>)).To(typeof(IBaseDomainService<>));
+            Bind(typeof(IDomainServiceBase<>)).To(typeof(IDomainServiceBase<>));
             Bind<ICidadeDomainService>().To<ICidadeDomainService>();
             Bind<IClienteDomainService>().To<ClienteDomainService>();
             Bind<IContatoDomainService>().To<ContatoDomainService>();
-            Bind<IEmpresaDomainService>().To<EmpresaDomainService>();
+            Bind<IHospdagemDomainService>().To<HospedagemDomainService>();
             Bind<IEnderecoDomainService>().To<EnderecoDomainService>();
             Bind<IEstadoDomainService>().To<EstadoDomainService>();
             Bind<IMensagemDomainService>().To<MensagemDomainService>();
