@@ -9,17 +9,15 @@ namespace VarcalSysClient.Domain.Entities
         public string Complemento { get; set; }
         public string Cep { get; set; }
         public string Bairro { get; set; }
-
         public virtual Cidade Cidade { get; set; }
         public int CidadeId { get; set; }
-
-        public int PessoaId { get; set; }
         public virtual Pessoa Pessoa { get; set; }
+        public int PessoaId { get; set; }
+        
 
         public Endereco()
         {
-            Cidade = new Cidade();
-            Pessoa = new Pessoa();
+           
         }
 
     }

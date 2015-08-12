@@ -22,7 +22,7 @@ namespace VarcalSysClient.App
         }
 
         public void Resgistrar(ClienteDto clienteDto)
-        {                           
+        {
             try
             {
                 var cliente = new Cliente
@@ -30,13 +30,13 @@ namespace VarcalSysClient.App
                     Pessoa = clienteDto.Pessoa,
                     PlanosHost = clienteDto.PlanosHost
                 };
-            
+
                 _clienteDomainService.Add(cliente);
             }
             catch (Exception ex)
             {
-                
-                throw;
+
+                throw new Exception(ex.Message);
             }
         }
     }

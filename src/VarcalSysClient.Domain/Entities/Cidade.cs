@@ -5,15 +5,8 @@ namespace VarcalSysClient.Domain.Entities
     public class Cidade: BaseEntity
     {
         public string Nome { get; set; }
+        
+        public virtual Estado Estado { get; set; }
         public int EstadoId { get; set; }
-
-
-        public Estado Estado { get; set; }
-
-
-        public Cidade()
-        {
-            Estado = new Estado();
-        }
     }
 }

@@ -10,9 +10,10 @@ namespace VarcalSysClient.Data.Mappings
             ToTable("tbCidade");
 
             HasKey(p => p.Id);
+
             HasRequired(p => p.Estado)
-                .WithMany()
-                .HasForeignKey(p => p.EstadoId);
+                .WithMany(c => c.CidadeCollection)
+                .HasForeignKey(c => c.EstadoId);
 
             Property(p => p.Id)
                 .HasColumnName("Id")
