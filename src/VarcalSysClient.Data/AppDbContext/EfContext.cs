@@ -19,7 +19,9 @@ namespace VarcalSysClient.Data.AppDbContext
         public DbSet<Pessoa> Pessoas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
-        public DbSet<Contato> Contatos { get; set; }
+        public DbSet<Celular> Celulares { get; set; }
+        public DbSet<Email> Emails { get; set; }
+        public DbSet<Telefone> Telefones { get; set; }
         public DbSet<Estado> Estados { get; set; }
         public DbSet<Mensagem> Mensagens { get; set; }
         public DbSet<PessoaFisica> PessoasFisica { get; set; }
@@ -45,7 +47,9 @@ namespace VarcalSysClient.Data.AppDbContext
             modelBuilder.Configurations.Add(new PessoaMap());
             modelBuilder.Configurations.Add(new EnderecoMap());
             modelBuilder.Configurations.Add(new CidadeMap());
-            modelBuilder.Configurations.Add(new ContatoMap());
+            modelBuilder.Configurations.Add(new TelefoneMap());
+            modelBuilder.Configurations.Add(new CelularMap());
+            modelBuilder.Configurations.Add(new EmailMap());
             modelBuilder.Configurations.Add(new EstadoMap());
             modelBuilder.Configurations.Add(new MessagemMap());
             modelBuilder.Configurations.Add(new PessoaFisicaMap());

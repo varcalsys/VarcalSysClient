@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity.ModelConfiguration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity.ModelConfiguration;
 using VarcalSysClient.Domain.Entities;
 
 namespace VarcalSysClient.Data.Mappings
@@ -19,7 +14,7 @@ namespace VarcalSysClient.Data.Mappings
             HasRequired(p => p.Cliente)
                 .WithMany(b => b.Boletos)
                 .HasForeignKey(p => p.ClienteId);
-
+           
             Property(p => p.Id)
                 .HasColumnName("Id")
                 .HasColumnType("int");
@@ -31,6 +26,10 @@ namespace VarcalSysClient.Data.Mappings
                 .HasColumnName("Url")
                 .HasColumnType("varchar")
                 .HasMaxLength(100)
+                .IsRequired();
+            Property(p => p.ClienteId)
+                .HasColumnName("ClienteId")
+                .HasColumnType("int")
                 .IsRequired();
            Property(p => p.Ativo)
                 .HasColumnName("Ativo")
