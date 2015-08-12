@@ -11,7 +11,7 @@ namespace VarcalSysClient.Data.Mappings
             HasKey(p => p.Id);
 
             HasRequired(p => p.Pessoa)
-                .WithMany(e => e.Enderecos)
+                .WithMany(e => e.EnderecoCollection)
                 .HasForeignKey(p => p.PessoaId);
 
             HasRequired(p => p.Cidade)

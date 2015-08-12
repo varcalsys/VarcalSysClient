@@ -36,9 +36,11 @@
   <ItemGroup>
     <Compile Include="Collections\Base\BaseCollection.cs" />
     <Compile Include="Collections\BoletoCollection.cs" />
+    <Compile Include="Collections\CelularCollection.cs" />
     <Compile Include="Collections\CidadeCollection.cs" />
     <Compile Include="Collections\ClienteCollection.cs" />
-    <Compile Include="Collections\ContatoCollection.cs" />
+    <Compile Include="Collections\EmailCollection.cs" />
+    <Compile Include="Collections\TelefoneCollection.cs" />
     <Compile Include="Collections\EnderecoCollection.cs" />
     <Compile Include="Collections\EstadoCollection.cs" />
     <Compile Include="Collections\PlanoHostCollection.cs" />
@@ -46,9 +48,10 @@
     <Compile Include="Collections\TicketCollection.cs" />
     <Compile Include="Contracts\Repositories\Core\IRepositoryBase.cs" />
     <Compile Include="Contracts\Repositories\IBoletoRepository.cs" />
+    <Compile Include="Contracts\Repositories\ICelularRepository.cs" />
     <Compile Include="Contracts\Repositories\ICidadeRepository.cs" />
     <Compile Include="Contracts\Repositories\IClienteRepository.cs" />
-    <Compile Include="Contracts\Repositories\IContatoRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEmailRepository.cs" />
     <Compile Include="Contracts\Repositories\IHospedagemRepository.cs" />
     <Compile Include="Contracts\Repositories\IEnderecoRepository.cs" />
     <Compile Include="Contracts\Repositories\IEstadoRepository.cs" />
@@ -58,17 +61,20 @@
     <Compile Include="Contracts\Repositories\IPessoaRepository.cs" />
     <Compile Include="Contracts\Repositories\IPlanoHostRepository.cs" />
     <Compile Include="Contracts\Repositories\IRespostaRepository.cs" />
+    <Compile Include="Contracts\Repositories\ITelefoneRepository.cs" />
     <Compile Include="Contracts\Repositories\ITicketRepository.cs" />
     <Compile Include="Contracts\Repositories\ITicketTipoRepository.cs" />
     <Compile Include="Contracts\Services\Core\IDomainServiceBase.cs" />
+    <Compile Include="Contracts\Services\ICelularDomainService.cs" />
     <Compile Include="Contracts\Services\ICidadeDomainService.cs" />
     <Compile Include="Contracts\Services\IClienteDomainService.cs" />
-    <Compile Include="Contracts\Services\IContatoDomainService.cs" />
+    <Compile Include="Contracts\Services\IEmailDomainService.cs" />
     <Compile Include="Contracts\Services\IHospdagemDomainService.cs" />
     <Compile Include="Contracts\Services\IEnderecoDomainService.cs" />
     <Compile Include="Contracts\Services\IEstadoDomainService.cs" />
     <Compile Include="Contracts\Services\IMensagemDomainService.cs" />
     <Compile Include="Contracts\Services\IRepostaDomainService.cs" />
+    <Compile Include="Contracts\Services\ITelefoneDomainService.cs" />
     <Compile Include="Contracts\Services\ITicketDomainService.cs" />
     <Compile Include="Contracts\Services\IPessoaDomainService.cs" />
     <Compile Include="Contracts\Services\IPessoaFisicaDomainService.cs" />
@@ -76,10 +82,11 @@
     <Compile Include="Contracts\Services\IPlanoHostDomainService.cs" />
     <Compile Include="Contracts\Services\ITicketTipoDomainService.cs" />
     <Compile Include="Entities\Boleto.cs" />
+    <Compile Include="Entities\Celular.cs" />
     <Compile Include="Entities\Core\BaseEntity.cs" />
     <Compile Include="Entities\Cidade.cs" />
     <Compile Include="Entities\Cliente.cs" />
-    <Compile Include="Entities\Contato.cs" />
+    <Compile Include="Entities\Email.cs" />
     <Compile Include="Entities\Endereco.cs" />
     <Compile Include="Entities\Hospedagem.cs" />
     <Compile Include="Entities\Pessoa.cs" />
@@ -89,14 +96,18 @@
     <Compile Include="Entities\PessoaJuridica.cs" />
     <Compile Include="Entities\PlanoHost.cs" />
     <Compile Include="Entities\Resposta.cs" />
+    <Compile Include="Entities\Telefone.cs" />
     <Compile Include="Entities\Ticket.cs" />
     <Compile Include="Entities\TicketTipo.cs" />
+    <Compile Include="Enums\Operadora.cs" />
     <Compile Include="Enums\PessoaTipo.cs" />
+    <Compile Include="Enums\TelefoneTipo.cs" />
+    <Compile Include="Services\CelularDomainService.cs" />
+    <Compile Include="Services\EmailDomainService.cs" />
     <Compile Include="Services\PlanoHostDomainService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CidadeDomainService.cs" />
     <Compile Include="Services\ClienteDomainService.cs" />
-    <Compile Include="Services\ContatoDomainService.cs" />
     <Compile Include="Services\Core\DomainServiceBase.cs" />
     <Compile Include="Services\HospedagemDomainService.cs" />
     <Compile Include="Services\EnderecoDomainService.cs" />
@@ -106,10 +117,16 @@
     <Compile Include="Services\PessoaFisicaDomainService.cs" />
     <Compile Include="Services\PessoaJuridicaDomainService.cs" />
     <Compile Include="Services\RespostaDomainService.cs" />
+    <Compile Include="Services\TelefoneDomainService.cs" />
     <Compile Include="Services\TicketDomainService.cs" />
     <Compile Include="Services\TicketTipoDomainService.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\VarcalsysClient.Util\VarcalsysClient.Util.csproj">
+      <Project>{4cc30750-03ff-45fd-8ee3-a75453375644}</Project>
+      <Name>VarcalsysClient.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

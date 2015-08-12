@@ -80,6 +80,10 @@
     <Compile Include="SimpleInjector\IoCSimpleInjectorModule.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\VarcalSysClient.App\VarcalSysClient.App.csproj">
+      <Project>{3d98df8d-c14f-4b8a-bcaf-7cfb4fe889fb}</Project>
+      <Name>VarcalSysClient.App</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VarcalSysClient.Data\VarcalSysClient.Data.csproj">
       <Project>{1c37d5b2-3a45-409b-958b-894e7240528a}</Project>
       <Name>VarcalSysClient.Data</Name>

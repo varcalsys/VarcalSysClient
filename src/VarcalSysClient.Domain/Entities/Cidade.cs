@@ -10,5 +10,10 @@ namespace VarcalSysClient.Domain.Entities
 
         public Estado Estado { get; set; }
 
+
+        public Cidade()
+        {
+            Estado = new Estado();
+        }
     }
 }

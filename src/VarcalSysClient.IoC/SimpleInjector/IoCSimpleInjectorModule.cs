@@ -1,5 +1,7 @@
 ﻿using SimpleInjector;
 using SimpleInjector.Extensions;
+using VarcalSysClient.App;
+using VarcalSysClient.App.Contracts;
 using VarcalSysClient.Data.AppDbContext;
 using VarcalSysClient.Data.Repositories;
 using VarcalSysClient.Data.Repositories.Core;
@@ -22,7 +24,6 @@ namespace VarcalSysClient.IoC.SimpleInjector
             container.RegisterOpenGeneric(typeof(IRepositoryBase<>),typeof(RepositoryBase<>));
             container.Register<ICidadeRepository,CidadeRepository>();
             container.Register<IClienteRepository,ClienteRepository>();
-            container.Register<IContatoRepository,ContatoRepository>();
             container.Register<IHospedagemRepository,HospedagemRepository>();
             container.Register<IEnderecoRepository,EnderecoRepository>();
             container.Register<IEstadoRepository,EstadoRepository>();
@@ -33,12 +34,15 @@ namespace VarcalSysClient.IoC.SimpleInjector
             container.Register<IPlanoHostRepository,PlanosHostRepository>();
             container.Register<ITicketRepository,TicketRepository>();
             container.Register<ITicketTipoRepository,TicketTipoRepository>();
+            container.Register<ITelefoneRepository,TelefoneRepository>();
+            container.Register<ICelularRepository, CelularRepository>();
+            container.Register<IEmailRepository,EmailRepository>();
+           
 
             //Services
             container.RegisterOpenGeneric(typeof(IDomainServiceBase<>), typeof(DomainServiceBase<>));
             container.Register<ICidadeDomainService, CidadeDomainService>();
             container.Register<IClienteDomainService, ClienteDomainService>();
-            container.Register<IContatoDomainService, ContatoDomainService>();
             container.Register<IHospdagemDomainService, HospedagemDomainService>();
             container.Register<IEnderecoDomainService, EnderecoDomainService>();
             container.Register<IEstadoDomainService, EstadoDomainService>();
@@ -49,6 +53,12 @@ namespace VarcalSysClient.IoC.SimpleInjector
             container.Register<IPlanoHostDomainService, PlanoHostDomainService>();
             container.Register<ITicketDomainService, TicketDomainService>();
             container.Register<ITicketTipoDomainService, TicketTipoDomainService>();
+            container.Register<ITelefoneDomainService, TelefoneDomainService>();
+            container.Register<ICelularDomainService, CelularDomainService>();
+            container.Register<IEmailDomainService, EmailDomainService>();
+
+            //App
+            container.Register<IClienteAppService, ClienteAppService>();
 
             return container;
         }

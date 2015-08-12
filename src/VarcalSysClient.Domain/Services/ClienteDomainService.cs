@@ -9,9 +9,12 @@ namespace VarcalSysClient.Domain.Services
     {
         private readonly IClienteRepository _clienteRepository;
 
-        public ClienteDomainService(IClienteRepository clienteRepository): base(clienteRepository)
+        public ClienteDomainService(IClienteRepository clienteRepository)
+            : base(clienteRepository)
         {
             _clienteRepository = clienteRepository;
         }
+
+
     }
 }

@@ -16,5 +16,11 @@ namespace VarcalSysClient.Domain.Entities
         public int PessoaId { get; set; }
         public virtual Pessoa Pessoa { get; set; }
 
+        public Endereco()
+        {
+            Cidade = new Cidade();
+            Pessoa = new Pessoa();
+        }
+
     }
 }
