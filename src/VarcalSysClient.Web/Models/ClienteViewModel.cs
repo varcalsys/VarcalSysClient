@@ -1,13 +1,27 @@
-﻿using VarcalSysClient.Domain.Enums;
+﻿using VarcalSysClient.Domain.Collections;
+using VarcalSysClient.Domain.Entities;
+using VarcalSysClient.Domain.Enums;
 
 namespace VarcalSysClient.Web.Models
 {
-    public class ClienteViewModel
+    public class ClienteViewModelRegister
     {
         public int Id { get; set; }
-        public PessoaTipo PessoaTipo { get; set; }
-        public string NomeRazaoSocial { get; set; }
-        public string CpfCnpj { get; set; }
-        
+        public int PessoaTipoId { get; set; }
+        public PessoaFisica PessoaFisica { get; set; }
+        public PessoaJuridica PessoaJuridica { get; set; }
+        public EnderecoCollection EnderecoCollection { get; set; }
+        public TelefoneCollection TelefoneCollection { get; set; }
+        public CelularCollection CelularCollection { get; set; }
+        public EmailCollection EmailCollection { get; set; }
+        public int PlanoHostId { get; set; }
+
+        public ClienteViewModelRegister()
+        {
+            EnderecoCollection = new EnderecoCollection();
+            CelularCollection = new CelularCollection();
+            EmailCollection = new EmailCollection();
+            TelefoneCollection = new TelefoneCollection();
+        }
     }
 }

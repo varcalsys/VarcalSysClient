@@ -229,6 +229,13 @@
     <Content Include="images\team2.jpg" />
     <Content Include="images\team3.jpg" />
     <Content Include="images\timer.png" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\app\appModule.js" />
+    <Content Include="Scripts\app\controllers\clienteController.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\css\font\fontawesome-webfont.eot" />
@@ -250,6 +257,8 @@
     <Content Include="Content\css\font\TisaPro-Ita.svg.readme" />
     <Content Include="Content\css\font\TisaPro-Ita.ttf" />
     <Content Include="Content\css\font\TisaPro-Ita.woff" />
+    <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
@@ -294,11 +303,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TicketTipoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClienteViewModel.cs" />
     <Compile Include="Models\TicketTipoViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -313,6 +324,7 @@
     <Content Include="Views\TicketTipo\Create.cshtml" />
     <Content Include="Views\Shared\_LayoutApp.cshtml" />
     <Content Include="Views\TicketTipo\Index.cshtml" />
+    <Content Include="Views\Cliente\Registrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -324,17 +336,21 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\VarcalsysClient.Util\VarcalsysClient.Util.csproj">
-      <Project>{4cc30750-03ff-45fd-8ee3-a75453375644}</Project>
-      <Name>VarcalsysClient.Util</Name>
-    </ProjectReference>
     <ProjectReference Include="..\VarcalSysClient.App\VarcalSysClient.App.csproj">
       <Project>{3d98df8d-c14f-4b8a-bcaf-7cfb4fe889fb}</Project>
       <Name>VarcalSysClient.App</Name>
     </ProjectReference>
+    <ProjectReference Include="..\VarcalSysClient.Domain\VarcalSysClient.Domain.csproj">
+      <Project>{7f8658e3-ced3-42ec-9a75-1051432ca06d}</Project>
+      <Name>VarcalSysClient.Domain</Name>
+    </ProjectReference>
     <ProjectReference Include="..\VarcalSysClient.IoC\VarcalSysClient.IoC.csproj">
       <Project>{e7fc72db-ca60-4326-9264-b50e417a7239}</Project>
       <Name>VarcalSysClient.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VarcalsysClient.Util\VarcalsysClient.Util.csproj">
+      <Project>{4cc30750-03ff-45fd-8ee3-a75453375644}</Project>
+      <Name>VarcalsysClient.Util</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

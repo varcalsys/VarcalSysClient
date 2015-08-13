@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using VarcalSysClient.App.Contracts;
 using VarcalSysClient.App.Dto;
+using VarcalSysClient.Web.Models;
 
 namespace VarcalSysClient.Web.Controllers
 {
@@ -21,13 +22,18 @@ namespace VarcalSysClient.Web.Controllers
             return View();
         }
 
+
         public ActionResult Registrar()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Registrar(ClienteViewModelRegister model)
         {
             try
             {
-                _clienteAppService.Resgistrar(new ClienteDto());
-
-                return RedirectToAction("Index", "TicketTipo");
+                return View();
             }
             catch (Exception)
             {

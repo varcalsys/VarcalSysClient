@@ -24,6 +24,7 @@ namespace VarcalSysClient.Web
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/angular.js",
+                        "~/Script/angular-route.js",
                         "~/Scripts/app/appModule.js"));
 
 

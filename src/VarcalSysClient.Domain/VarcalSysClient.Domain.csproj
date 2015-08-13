@@ -121,12 +121,6 @@
     <Compile Include="Services\TicketDomainService.cs" />
     <Compile Include="Services\TicketTipoDomainService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\VarcalsysClient.Util\VarcalsysClient.Util.csproj">
-      <Project>{4cc30750-03ff-45fd-8ee3-a75453375644}</Project>
-      <Name>VarcalsysClient.Util</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
