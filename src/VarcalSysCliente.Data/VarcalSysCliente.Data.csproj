@@ -30,7 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -39,7 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContextDb\EfDbContext.cs" />
+    <Compile Include="Mapping\ClienteMap.cs" />
+    <Compile Include="Mapping\PessoaFisicaMap.cs" />
+    <Compile Include="Mapping\PessoaJuridicaMap.cs" />
+    <Compile Include="Mapping\ContatoMap.cs" />
+    <Compile Include="Mapping\EnderecoMap.cs" />
+    <Compile Include="Mapping\PlanoHostMap.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\ContatoRepository.cs" />
+    <Compile Include="Repositories\Core\RepositoryBase.cs" />
+    <Compile Include="Repositories\EnderecoRepository.cs" />
+    <Compile Include="Repositories\PessoaFisicaRepository.cs" />
+    <Compile Include="Repositories\PessoaJuridicaRepository.cs" />
+    <Compile Include="Repositories\PlanoHostRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VarcalSysCliente.Domain\VarcalSysCliente.Domain.csproj">
@@ -47,10 +71,10 @@
       <Name>VarcalSysCliente.Domain</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ContextDb\" />
-    <Folder Include="Mapping\" />
-    <Folder Include="Repositories\Core\" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

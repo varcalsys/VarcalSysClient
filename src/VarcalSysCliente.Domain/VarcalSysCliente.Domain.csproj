@@ -39,14 +39,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Core\IDomainServiceBase.cs" />
+    <Compile Include="Contracts\Core\IRepositoryBase.cs" />
+    <Compile Include="Contracts\Repositories\IClienteRepository.cs" />
+    <Compile Include="Contracts\Repositories\IContatoRepository.cs" />
+    <Compile Include="Contracts\Repositories\IEnderecoRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPessoaFisicaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPessoaJuridicaRepository.cs" />
+    <Compile Include="Contracts\Repositories\IPlanoHostRepository.cs" />
+    <Compile Include="Contracts\Services\IClienteDomainService.cs" />
+    <Compile Include="Contracts\Services\IContatoDomainService.cs" />
+    <Compile Include="Contracts\Services\IEnderecoDomainService.cs" />
+    <Compile Include="Contracts\Services\IPessoaFisicaDomainService.cs" />
+    <Compile Include="Contracts\Services\IPessoaJuridicaDomainService.cs" />
+    <Compile Include="Contracts\Services\IPlanoHostDomainService.cs" />
+    <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\PessoaFisica.cs" />
+    <Compile Include="Entities\PessoaJuridica.cs" />
+    <Compile Include="Entities\Contato.cs" />
+    <Compile Include="Entities\Endereco.cs" />
+    <Compile Include="Entities\PlanoHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ClienteDomainService.cs" />
+    <Compile Include="Services\ContatoDomainService.cs" />
+    <Compile Include="Services\Core\DomainServiceBase.cs" />
+    <Compile Include="Services\EnderecoDomainService.cs" />
+    <Compile Include="Services\PessoaFisicaDomainService.cs" />
+    <Compile Include="Services\PessoaJuridicaDomainService.cs" />
+    <Compile Include="Services\PlanoHostDomainService.cs" />
+    <Compile Include="ValueObjects\PessoaTipo.cs" />
+    <Compile Include="ValueObjects\Uf.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Collections\Core\" />
-    <Folder Include="Contracts\Core\" />
-    <Folder Include="Contracts\Repositories\" />
-    <Folder Include="Contracts\Services\" />
-    <Folder Include="Services\Core\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
