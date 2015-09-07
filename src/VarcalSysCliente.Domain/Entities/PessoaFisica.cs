@@ -20,6 +20,11 @@ namespace VarcalSysCliente.Domain.Entities
         public Cliente Cliente { get; set; }
 
 
+        protected PessoaFisica()
+        {
+            
+        }
+
         public PessoaFisica(PlanoHost planoHost, string dominio, string nome, string cpf, PessoaTipo clienteTipo, Endereco endereco, Contato contato,[Optional] string rg)
         {
 

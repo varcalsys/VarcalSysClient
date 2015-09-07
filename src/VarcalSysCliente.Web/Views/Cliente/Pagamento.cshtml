@@ -1,0 +1,58 @@
+﻿@model VarcalSysCliente.Web.Models.PlanoHostViewModel
+
+@{
+    ViewBag.Title = "Pagamento";
+}
+
+
+<div ng-controller="planoHostController">
+    <h2>Pagamento</h2>
+    <input type="hidden" ng-model="planoHost.Id = @Model.Id" value="{{planoHost.Id}}" />
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Descricao, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Descricao, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Valor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Valor, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group" ng-show="planoHost.Id==1">
+            <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+                <input type="hidden" name="code" value="88281B39FBFB3DC994F3BF88A23E38A3" />
+                <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+            </form>
+        </div>
+        <div class="form-group" ng-show="planoHost.Id==2">
+            <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+                <input type="hidden" name="code" value="99129EE78686B44444618F94A6DBE950" />
+                <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+            </form>
+        </div>
+        <div class="form-group" ng-show="planoHost.Id==3">
+            <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+                <input type="hidden" name="code" value="99129EE78686B44444618F94A6DBE950" />
+                <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+            </form>
+        </div>
+        <div class="form-group" ng-show="planoHost.Id==4">
+            <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post">
+                <input type="hidden" name="code" value="BD967DB385856AA6642BBFA8957CF851" />
+                <input type="image" src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/209x48-pagar-preto-assina.gif" name="submit" alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <script src="~/Scripts/App/planoHostController.js"></script>
+}

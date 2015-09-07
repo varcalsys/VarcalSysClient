@@ -39,6 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collections\ClienteCollection.cs" />
+    <Compile Include="Collections\Core\BaseCollection.cs" />
+    <Compile Include="Collections\PlanoHostCollection.cs" />
     <Compile Include="Contracts\Core\IDomainServiceBase.cs" />
     <Compile Include="Contracts\Core\IRepositoryBase.cs" />
     <Compile Include="Contracts\Repositories\IClienteRepository.cs" />
@@ -70,9 +73,7 @@
     <Compile Include="ValueObjects\PessoaTipo.cs" />
     <Compile Include="ValueObjects\Uf.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Collections\Core\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

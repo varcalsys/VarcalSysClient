@@ -8,11 +8,25 @@ namespace VarcalSysCliente.Domain.Entities
 {
     public sealed class Contato
     {
-        public int Id { get; set; }
-        public string Email { get; set; }
-        public string EmailCobranca { get; set; }
-        public string Telefone { get; set; }
-        public string Celular { get; set; }
+        public int Id { get; private set; }
+        public string Email { get; private set; }
+        public string EmailCobranca { get; private set; }
+        public string Telefone { get; private set; }
+        public string Celular { get; private set; }
+
+
+        protected Contato()
+        {
+            
+        }
+
+        public Contato(string email, string emailCobranca, string telefone, string celular)
+        {
+            Email = email;
+            EmailCobranca = emailCobranca;
+            Telefone = telefone;
+            Celular = celular;
+        }
     }
 
 }

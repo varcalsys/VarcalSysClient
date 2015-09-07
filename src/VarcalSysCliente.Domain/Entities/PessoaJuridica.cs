@@ -19,6 +19,11 @@ namespace VarcalSysCliente.Domain.Entities
         public string NomeResponsavel { get; private set; }
         public Cliente Cliente { get; set; }
 
+        protected PessoaJuridica()
+        {
+            
+        }
+
         public PessoaJuridica(PlanoHost planoHost, string dominio, string razaoSocial,string cnpj, string nomeResponsavel, PessoaTipo clienteTipo, Endereco endereco, Contato contato, [Optional] string inscEst, [Optional] string nomeFantasia)
         {
             if (string.IsNullOrWhiteSpace(razaoSocial))

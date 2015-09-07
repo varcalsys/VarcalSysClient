@@ -11,7 +11,12 @@ namespace VarcalSysCliente.Domain.Entities
         public int Id { get; private set; }
         public string Descricao { get; private set; }
         public decimal Valor { get; private set; }
-        public bool Ativo { get; set; }
+        public bool Ativo { get; private set; }
+
+        protected PlanoHost()
+        {
+            
+        }
 
         public PlanoHost(string descricao, decimal valor)
         {

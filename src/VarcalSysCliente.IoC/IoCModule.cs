@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ninject.Modules;
+using VarcalSysCliente.App.Contracts;
+using VarcalSysCliente.App.Services;
 using VarcalSysCliente.Data.ContextDb;
 using VarcalSysCliente.Data.Repositories;
 using VarcalSysCliente.Domain.Contracts.Core;
@@ -19,6 +21,7 @@ namespace VarcalSysCliente.IoC
         public override void Load()
         {
             //Application
+            Bind<IClienteAppService>().To<ClienteAppService>();
 
             //Domain
             Bind(typeof(IDomainServiceBase<>)).To(typeof(DomainServiceBase<>));

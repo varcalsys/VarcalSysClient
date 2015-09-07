@@ -18,22 +18,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Nome Cliente";
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do CLiente",
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato
-            {
-                Celular = "11922223456",
-                Email = "teste@teste.com",
-                EmailCobranca = "cobranca@cobranca.com",
-                Telefone = "1123456789"
-            };
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
 
             //Assert
             Assert.IsNotNull(cliente);
@@ -53,23 +42,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Nome Cliente";
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                
-                Logradouro = "Endereço do CLiente",
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato
-            {
-                Celular = "11922223456",
-                Email = "teste@teste.com",
-                EmailCobranca = "cobranca@cobranca.com",
-                Telefone = "1123456789"
-            };
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
         }
 
         [TestMethod]
@@ -80,24 +57,13 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Nome Cliente";
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do CLiente",
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato
-            {
-                Celular = "11922223456",
-                Email = "teste@teste.com",
-                EmailCobranca = "cobranca@cobranca.com",
-                Telefone = "1123456789"
-            };
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             _planoHost = new PlanoHost("",0);
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
         }
 
         [TestMethod]
@@ -108,11 +74,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             string nome = string.Empty;
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco();
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("", "", 0);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
 
             //Assert
         }
@@ -125,33 +91,28 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Cliente";
             string cpf = string.Empty;
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco();
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
 
             //Assert
         }
 
         [TestMethod]
         [ExpectedException(typeof(ApplicationException))]
-        public void QuandoEuCriarUmClienteEnderecoDeveSerObrigatorio()
+        public void QuandoEuCriarUmClienteLogradouroDeveSerObrigatorio()
         {
             //Arrange
             const string nome = "Cliente";
             string cpf = string.Empty;
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = string.Empty,
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("", "São Paulo", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
 
             //Assert
         }
@@ -164,16 +125,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Cliente";
             string cpf = string.Empty;
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do Cliente",
-                Cidade = string.Empty,
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("Endereço do Cliente", "", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
 
             //Assert
         }
@@ -186,16 +142,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Cliente";
             string cpf = string.Empty;
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do Cliente",
-                Cidade = "São Paulo",
-                Uf = 0,
-            };
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", 0);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
 
             //Assert
         }
@@ -208,16 +159,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Nome Cliente";
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do CLiente",
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato("", "cobranca@cobranca.com", "1122223456", "11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
         }
 
         [TestMethod]
@@ -228,16 +174,10 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Nome Cliente";
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do CLiente",
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato();
-
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "", "1122223456", "11922223456");
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
         }
 
         [TestMethod]
@@ -248,16 +188,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Nome Cliente";
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do CLiente",
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato( "teste@teste.com", "cobranca@cobranca.com", "","11922223456");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
         }
 
 
@@ -269,16 +204,11 @@ namespace VarcalSysCliente.DomainTest.Entities
             const string nome = "Nome Cliente";
             const string cpf = "00000000000";
             const PessoaTipo clienteTipo = PessoaTipo.Fisica;
-            Endereco logradouro = new Endereco
-            {
-                Logradouro = "Endereço do CLiente",
-                Cidade = "São Paulo",
-                Uf = Uf.SP,
-            };
-            Contato contato = new Contato();
+            Endereco endereco = new Endereco("Endereço do Cliente", "São Paulo", Uf.SP);
+            Contato contato = new Contato("teste@teste.com", "cobranca@cobranca.com", "1122223456", "");
 
             //Act
-            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, logradouro, contato);
+            var cliente = new PessoaFisica(_planoHost, _dominio, nome, cpf, clienteTipo, endereco, contato);
         }
 
     }

@@ -39,8 +39,9 @@ namespace VarcalSysCliente.Domain.Entities
             if (planoHost.Valor <= 0)
                 throw new ApplicationException("Valor do Plano Host é obrigatorio");
 
+            Ativo = true;
             Dominio = dominio;
-            PlanoHost = planoHost;
+            PlanoHostId = planoHost.Id;          
         }
 
 
@@ -67,6 +68,11 @@ namespace VarcalSysCliente.Domain.Entities
         public void SetContato(Contato contato)
         {
             Contato = contato;
-        }       
+        }
+
+        public void SetAtivo(bool ativo)
+        {
+            Ativo = ativo;
+        }
     }
 }
