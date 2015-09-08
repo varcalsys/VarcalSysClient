@@ -40,7 +40,7 @@ namespace VarcalSysCliente.Data.Repositories.Core
 
         public IEnumerable<T> GetAsNoTracking()
         {
-            return _db.Set<T>().AsNoTracking();
+                return _db.Set<T>().AsNoTracking();
         }
 
 

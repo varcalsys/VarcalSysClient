@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VarcalSysCliente.IoC", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VarcalSysCliente.DomainTest", "test\VarcalSysCliente.DomainTest\VarcalSysCliente.DomainTest.csproj", "{DE443F33-26CD-4784-800D-94A43EA78CB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VarcalSysCliente.Util", "src\VarcalSysCliente.Util\VarcalSysCliente.Util.csproj", "{6BB2F1EA-4811-432A-9779-0DE1C7B44B85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{DE443F33-26CD-4784-800D-94A43EA78CB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE443F33-26CD-4784-800D-94A43EA78CB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE443F33-26CD-4784-800D-94A43EA78CB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BB2F1EA-4811-432A-9779-0DE1C7B44B85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BB2F1EA-4811-432A-9779-0DE1C7B44B85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BB2F1EA-4811-432A-9779-0DE1C7B44B85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BB2F1EA-4811-432A-9779-0DE1C7B44B85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,5 +76,6 @@ Global
 		{A9E9A60E-9ED4-4CF7-83BF-DB03A09A7FE5} = {C832B473-10B7-468B-A0E7-6CEF82201EAB}
 		{74C97C3D-4699-475A-BA5C-D769CABA29C1} = {CF017517-299D-40BA-8F95-E2B68036A80F}
 		{DE443F33-26CD-4784-800D-94A43EA78CB9} = {5CB00713-5282-44F2-9CCB-7BCC52571C4C}
+		{6BB2F1EA-4811-432A-9779-0DE1C7B44B85} = {CF017517-299D-40BA-8F95-E2B68036A80F}
 	EndGlobalSection
 EndGlobal

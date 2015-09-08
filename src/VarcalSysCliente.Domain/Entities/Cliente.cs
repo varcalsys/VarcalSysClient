@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using VarcalSysCliente.Domain.Contracts;
 using VarcalSysCliente.Domain.ValueObjects;
+using BM.Validations;
 
 namespace VarcalSysCliente.Domain.Entities
 {
@@ -32,13 +33,10 @@ namespace VarcalSysCliente.Domain.Entities
 
         public Cliente(string dominio, PlanoHost planoHost)
         {
-            if (string.IsNullOrEmpty(dominio))
-                throw new ApplicationException("Dominio é obrigatório");
-            if (string.IsNullOrWhiteSpace(planoHost.Descricao))
-                throw new ApplicationException("Descrição do Plano Host é obrigatorio");
-            if (planoHost.Valor <= 0)
-                throw new ApplicationException("Valor do Plano Host é obrigatorio");
-
+            ValidatorHelper.GarantirValorPreenchido(dominio, "Dominio é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(planoHost.Descricao, "Descrição do Plano Host é obrigatorio");
+            ValidatorHelper.GarantirMaiorQue(planoHost.Valor, 0, "Valor do Plano Host é obrigatorio");
+            
             Ativo = true;
             Dominio = dominio;
             PlanoHostId = planoHost.Id;          

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using BM.Validations;
 using VarcalSysCliente.Domain.ValueObjects;
 
 namespace VarcalSysCliente.Domain.Entities
@@ -26,26 +27,17 @@ namespace VarcalSysCliente.Domain.Entities
 
         public PessoaJuridica(PlanoHost planoHost, string dominio, string razaoSocial,string cnpj, string nomeResponsavel, PessoaTipo clienteTipo, Endereco endereco, Contato contato, [Optional] string inscEst, [Optional] string nomeFantasia)
         {
-            if (string.IsNullOrWhiteSpace(razaoSocial))
-                throw new ApplicationException("Razão Social é obrigatório");
-            if (string.IsNullOrWhiteSpace(cnpj))
-                throw new ApplicationException("CNPJ é obrigatório");
-            if (string.IsNullOrWhiteSpace(endereco.Logradouro))
-                throw new ApplicationException("Endereço é obrigatório");
-            if (string.IsNullOrWhiteSpace(endereco.Cidade))
-                throw new ApplicationException("Cidade é obrigatório");
-            if(!clienteTipo.Equals(PessoaTipo.Juridica))
-                throw new ApplicationException("Tipo Pessoa é obrigatório");
-            if ((int)endereco.Uf < 1)
-                throw new ApplicationException("UF é obrigatório");
-            if (string.IsNullOrWhiteSpace(contato.Email))
-                throw new ApplicationException("Email é obrigatório");
-            if (string.IsNullOrWhiteSpace(contato.EmailCobranca))
-                throw new ApplicationException("Email de Cobrança é obrigatório");
-            if (string.IsNullOrWhiteSpace(contato.Telefone))
-                throw new ApplicationException("Telefone é obrigatório");
-            if (string.IsNullOrWhiteSpace(contato.Celular))
-                throw new ApplicationException("Celular é obrigatório");
+
+            ValidatorHelper.GarantirValorPreenchido(razaoSocial, "Razão Social é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(cnpj, "Cnpj é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(endereco.Logradouro, "Logradouro é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(endereco.Cidade, "Cidade é obrigatório");
+            ValidatorHelper.GarantirIgual(clienteTipo, PessoaTipo.Juridica, "Tipo Pessoa é obrigatório");
+            ValidatorHelper.GarantirMaiorQue((int)endereco.Uf, 0, "Uf é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(contato.Email, "Email é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(contato.EmailCobranca, "Email Cobrança é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(contato.Telefone, "Telefone é obrigatório");
+            ValidatorHelper.GarantirValorPreenchido(contato.Celular, "Celular é obrigatório");
 
             RazaoSocial = razaoSocial;
             Cnpj = cnpj;
